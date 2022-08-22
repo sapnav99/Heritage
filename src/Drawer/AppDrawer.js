@@ -1,7 +1,3 @@
-import React from 'react';
-import { View, Text } from 'react-native';
-import { NavigationContainer } from '@react-navigation/native';
-import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { createDrawerNavigator } from '@react-navigation/drawer';
 import Appointments from './src/Drawer/Appointments';
 import Farmer from './src/Drawer/Farmer';
@@ -12,15 +8,10 @@ import Password from './src/Drawer/Password';
 import Service from './src/Drawer/Service';
 import Signout from './src/Drawer/Signout';
 
-
-
-const Stack = createNativeStackNavigator();
 const Drawer = createDrawerNavigator();
 
-
-function App() {
+export default function AppDrawer() {
   return (
-    <NavigationContainer>
     <Drawer.Navigator>
       <Drawer.Screen name="Appointments" component={Appointments} />
       <Drawer.Screen name="Orders" component={Order} />
@@ -31,11 +22,5 @@ function App() {
       <Drawer.Screen name="Change Password" component={Password} />
       <Drawer.Screen name="Sign Out" component={Signout} />
     </Drawer.Navigator>
-    </NavigationContainer>
   );
-
 }
-
-
-
-export default App;
